@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  div.header
+    h1= title
+
+  div.tray
+    h2 All Categories
+    p Total: #{totalCats}
+    div.toolbar
+      a(href='/inventory/create/cat') New Category
+
+    ul
+      each category in categories
+        li
+          a(href=category.url) #{category.name}
+        p #{category.description}
+
+    
+
+      

@@ -1,0 +1,32 @@
+extends layout 
+
+block content
+
+block content
+  div.header
+    h1= title
+  div.tray
+    if errors && errors.length
+      ul
+        each error in errors
+          li.error= error.msg
+
+    form(action='/inventory//create/item', method='POST')
+      label(for='name') Name:
+      input(type='text', id='name', name='name')
+      br
+      label(for='description') Description:
+      textarea(id='description', name='description')
+      br
+      label(for='category') Category:
+      select(id='category', name='category')
+        each category in categories
+          option(value=category._id)= category.name
+      br
+      label(for='price') Price:
+      input(type='number', id='price', name='price')
+      br
+      label(for='stock') Stock:
+      input(type='number', id='stock', name='stock')
+      br
+      button(type='submit') Create 

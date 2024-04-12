@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div.header
+    h1= item.name
+
+  div.tray
+    h2= item.name
+
+    h3 Delete confirm: 
+    p Are you sure you want to delete #{item.name}?
+    form.toolbar(id='deleteForm', action=`/inventory/item/${item._id}/delete`, method='POST')
+      button(type='submit') Confirm
+      button(href='/') Cancel

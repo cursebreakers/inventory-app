@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  div.header
+    h1= title
+  div.tray
+    h2 Inventory:
+    p Total: #{totalItems} Products
+    p Total stock: #{totalUnits} units
+    p Value: $#{totalValue}  USD
+    div.toolbar
+      a(href='/inventory/create/item') New Item
+
+    ul
+      each item in items
+        li
+          a(href=item.url) #{item.name}
+          p #{item.description}
+          p Category:
+            each cat in item.category
+              a(href=cat.url)  #{cat.name}
+          p Cost: $#{item.price} USD
+          p Stock: #{item.stock} units
+          p Value: $#{item.totalValue} USD
+      

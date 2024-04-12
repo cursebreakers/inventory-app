@@ -1,0 +1,21 @@
+extends layout 
+
+block content
+
+block content
+  div.header
+    h1= title
+  div.tray
+    if errors && errors.length
+      ul
+        each error in errors
+          li.error= error.msg
+
+    form(action='/inventory//create/cat', method='POST')
+      label(for='name') Name:
+      input(type='text', id='name', name='name')
+      br
+      label(for='description') Description:
+      textarea(id='description', name='description')
+      br
+      button(type='submit') Create 

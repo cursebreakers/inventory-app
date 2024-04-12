@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  div.header
+    h1= title
+  div.tray
+    h2= category.name
+    
+    p #{category.description}
+    h3 Items in category:
+    ul
+      each item in items
+        li
+          a(href=`/inventory/item/${item._id}`) #{item.name}
+
+    div
+      h2 #{toolkit}
+      p Inventory Management Tools:
+      div.toolbar
+        a(href=`/inventory/cat/${category._id}/update`) Manage
+        a(href=`/inventory/cat/${category._id}/delete`) Delete

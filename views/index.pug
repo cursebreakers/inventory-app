@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  div.header
+  
+    h1= title
+    p Welcome to your #{title}
+
+  div.tray
+
+    h2 #{overview}    
+    p Inventory Stats and Summary:
+    ul 
+      li Total Products:
+        a.total(href='/inventory/all')  #{totalItems}
+      li Total categories:
+        a.total(href='/inventory/cat')  #{totalCats}
+      li Total Stock:
+        a.total(href='/inventory/all')  #{totalUnits}
+      li Total Value: 
+        a.total(href='/inventory/all') $#{totalValue}
+    h2 Tools 
+    p Inventory Management 
+    div.toolbar
+      a(href='/inventory/create/item') New Item     
+      a(href='/inventory/create/cat') New Category
+ 

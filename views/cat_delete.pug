@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  div.header
+    h1= category.name
+
+  div.tray
+    h2= category.name
+
+    h3 Delete confirm:
+      p Are you sure you want to delete #{category.name}?
+      
+      // Display the warning message if there are associated items
+      if errors && errors.length
+        ul.error
+          each error in errors
+            li= error.msg
+
+      ul
+        each item in items
+          li= item.name
+
+      form.toolbar(id='deleteForm', action=`/inventory/cat/${category._id}/delete`, method='POST')
+        button(type='submit') Confirm Delete
+        a(href=`/inventory/cat/${category._id}`) Cancel

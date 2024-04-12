@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  div.header
+    h1= item.name
+  div.tray
+    h2= item.name
+    
+    ul
+      li Description: #{item.description}
+      li Category: 
+        each cat in item.category
+          a(href=cat.url) #{cat.name}
+      li Price: $#{item.price} USD
+      li Stock: #{item.stock} units
+      li Value: $#{totalValue} USD
+
+    div
+      h2 #{toolkit}
+      p Inventory Management Tools:
+      div.toolbar
+        a(href=`/inventory/item/${item_id}/update`) Manage
+        a(href=`/inventory/item/${item_id}/delete`) Delete
