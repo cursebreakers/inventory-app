@@ -1,6 +1,7 @@
 # Inventory Manager Application
 
-**Author**: Esau Gavett @[Cursebreakers LLC](https://cursebreakers.net)
+- **[View live on Glitch.com](https://principled-cheddar-range.glitch.me)**
+- **Author**: Esau Gavett @[Cursebreakers LLC](https://cursebreakers.net)
 
 ## Featuring:
 
